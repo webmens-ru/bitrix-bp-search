@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Настройки — поиск в списках БП Битрикс24</title>
+<style>
+    body { font: 14px "Segoe UI", Arial, sans-serif; margin: 0; background: #f5f7f9; color: #333; }
+    .card { max-width: 520px; margin: 40px auto; background: #fff; border: 1px solid #dfe5ea;
+            border-top: 3px solid #2fc7f7; padding: 24px 28px; }
+    h1 { font-size: 18px; margin: 0 0 20px; }
+    label.row { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+    input[type=checkbox] { margin-top: 3px; width: 16px; height: 16px; accent-color: #2fc7f7; }
+    small { color: #777; line-height: 1.4; display: block; margin-top: 3px; }
+    #status { margin-top: 16px; color: #1e9e4b; min-height: 18px; }
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>Поиск в списках значений БП Битрикс24</h1>
+
+    <label class="row">
+        <input type="checkbox" id="multiWord">
+        <span>
+            <b>Поиск по вхождению каждого слова</b>
+            <small>«билайн 9282» найдёт «Билайн АТС 9282284349», «чат рас» — «Онлайн-чат — Онлайн чат РАС».
+            Слова ищутся в тексте и в значении пункта, порядок не важен.<br>
+            Если выключено — поиск строго по подстроке целиком («билайн 9282» ничего не найдёт).</small>
+        </span>
+    </label>
+
+    <div id="status"></div>
+</div>
+<script src="options.js"></script>
+</body>
+</html>

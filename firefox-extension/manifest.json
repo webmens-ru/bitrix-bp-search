@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Bitrix24 BP — поиск в списках значений",
+  "version": "1.4.0",
+  "description": "Добавляет строку поиска в выпадающие списки значений полей в дизайнере бизнес-процессов Битрикс24.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bitrix-bp-search@local.kimi",
+      "strict_min_version": "109.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/bitrix/admin/bizproc_activity_settings.php*",
+        "*://*/bitrix/admin/bizproc_workflow_edit.php*",
+        "*://*/crm/configs/bp/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
